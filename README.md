@@ -1,6 +1,12 @@
-##leaft 是一个前端自动化打包工具##
+##jsMonkey 是一个前端自动化打包工具## 
+###description
+jsmonkey是一个用node.js对Javascript、和css的压缩合并工具，Javascript代码检查，支持脚本应用替换和hash版本控制自动化版本、手动版本控制，并且支持控制台调用和可视化调用配置，
 
-## 前端自动运行流程 ##
+###install
+> npm install jsmonkey
+
+
+### 前端自动运行流程 ##
 
 - 第一步、检测要打包的资源文件（js、css文件）查找是否符合规范
 

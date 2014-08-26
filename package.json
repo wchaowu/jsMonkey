@@ -16,7 +16,7 @@
     "test": "mocha --reporter list"
   },
   "files": [
-    "lib/index.js"
+    "*"
   ],
     "dependencies": {
         "uglify-js": "2.4.13",

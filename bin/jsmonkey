@@ -1,0 +1,7 @@
+var arg = process.argv;
+var hashFilesInDir = require('../lib/HashFileInDir');
+if(arg>1){
+  if(arg[1]=="min"){
+      hashFilesInDir.hashFilesInDir(fs.realpathSync('.'));
+  }
+}

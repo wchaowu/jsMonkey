@@ -1,0 +1,1 @@
+function mockDemo(n,o){return n+o}function mockDemo1(){return 4}

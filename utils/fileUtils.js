@@ -3,6 +3,7 @@
  */
 var fs = require("fs");
 var path = require("path");
+
 exports.writeReplaceFile = function (fileName, text) {
 
     var fd = fs.openSync(fileName, "w");
@@ -10,24 +11,17 @@ exports.writeReplaceFile = function (fileName, text) {
     fs.closeSync(fd);
 };
 exports.rmdir = function (dir) {
-    var rmDirectory = function (dir) {
-        if (fs.existsSync(dir)) {
-            var list = fs.readdirSync(dir);
-            for (var i = 0; i < list.length; i++) {
-                var filename = path.join(dir, list[i]);
-                var stat = fs.statSync(filename);
-
-                if (filename == "." || filename == "..") {
-                    // pass these files
-                } else if (stat.isDirectory()) {
-                    // rmdir recursively
-                    rmDirectory(filename);
-                } else {
-                    // rm fiilename
-                    fs.unlinkSync(filename);
+    var rmDirectory = function (path) {
+        if( fs.existsSync(path) ) {
+            fs.readdirSync(path).forEach(function(file,index){
+                var curPath = path + "/" + file;
+                if(fs.lstatSync(curPath).isDirectory()) { // recurse
+                    rmDirectory(curPath);
+                } else { // delete file
+                    fs.unlinkSync(curPath);
                 }
-            }
-            fs.rmdirSync(dir);
+            });
+            fs.rmdirSync(path);
         }
     };
     rmDirectory(dir);
@@ -61,7 +55,7 @@ exports.mkdirSync = function(url,mode,cb){
         arr.splice(0,2,arr[0]+"/"+arr[1])
     }
     function inner(cur){
-        if(!path.existsSync(cur)){//不存在就创建一个
+        if(!fs.existsSync(cur)){//不存在就创建一个
             fs.mkdirSync(cur, mode)
         }
         if(arr.length){
@@ -73,15 +67,5 @@ exports.mkdirSync = function(url,mode,cb){
         }
     }
     arr.length && inner(arr.shift());
-}
-/*
-//测试代码
-mkdirSync("aaa/ddd/dd",0,function(e){
-    if(e){
-        console.log('出错了');
-    }else{
-        console.log("创建成功")
-    }
-})
-*/
+};
 

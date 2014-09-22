@@ -2,8 +2,8 @@
 ###description
 jsmonkey是一个用node.js对Javascript、和css的压缩合并工具，Javascript代码检查，支持脚本应用替换和hash版本控制自动化版本、手动版本控制，并且支持控制台调用和可视化调用配置，
 
-###install 安装到全局，建议采用默认
-> npm install jsmonkey -g
+###install
+> npm install jsmonkey
 
 ##自动化描述
 
@@ -18,17 +18,8 @@ jsmonkey是一个用node.js对Javascript、和css的压缩合并工具，Javascr
    2、资源（js、css）文件进行压缩,合并功能
 
    3、生成sha1文件版本
-   
-   4、将压缩好的资源文件和引用替换好的文件生成zip文件
- 
-##命令行工具
 
-压缩
- 
-   
-
-##其他功能
-替换page页面（jsp和html页面）中的<script src="" />路径
+-  4、替换page页面（jsp和html页面）中的<script src="" />路径
 
 > 例如
 > 
@@ -40,6 +31,6 @@ jsmonkey是一个用node.js对Javascript、和css的压缩合并工具，Javascr
 
 
 
-
+   5、将压缩好的资源文件和引用替换好的文件生成zip文件
 
   

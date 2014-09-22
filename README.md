@@ -80,11 +80,11 @@ jsmonkey是一个用node.js对Javascript、和css的压缩合并工具，Javascr
 
 ### 功能描述 ##
 
-查找打包目录的合并文件“merge.properties”，将要合并的文件进行合并
-将要打包文件复制一份到target目录下
-资源文件（js、css文件）查找是否符合规范 采用jshint核心
-资源（js、css）文件进行压缩(过滤.min.js或者 min.css不进行压缩）
-将target目录压缩生成zip文件
+1. 查找打包目录的合并文件“merge.properties”，将要合并的文件进行合并
+2. 将要打包文件复制一份到target目录下
+3. 资源文件（js、css文件）查找是否符合规范 采用jshint核心
+4. 资源（js、css）文件进行压缩(过滤.min.js或者 min.css不进行压缩）
+5. 将target目录压缩生成zip文件
 
 其他功能描述
  替换page页面（jsp和html页面）中的script src="/js/zepto.js" 路径或者 src="<%=pathurl %>/js/zepto.js"
